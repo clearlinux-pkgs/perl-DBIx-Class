@@ -2,3 +2,8 @@
 # picked up automatically. One name per line, no whitespace.
 perl-DBD-SQLite
 perl-Class-C3-Componentised
+perl(JSON::Any)
+perl(MooseX::Types)
+perl(MooseX::Types::JSON)
+perl(MooseX::Types::LoadableClass)
+perl(MooseX::Types::Path::Class)

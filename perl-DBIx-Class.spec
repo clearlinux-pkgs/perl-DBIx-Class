@@ -4,7 +4,7 @@
 #
 Name     : perl-DBIx-Class
 Version  : 0.082841
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/DBIx-Class-0.082841.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/DBIx-Class-0.082841.tar.gz
 Summary  : Extensible and flexible object <-> relational mapper.
@@ -13,6 +13,11 @@ License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-DBIx-Class-bin = %{version}-%{release}
 Requires: perl-DBIx-Class-license = %{version}-%{release}
 Requires: perl-DBIx-Class-man = %{version}-%{release}
+Requires: perl(JSON::Any)
+Requires: perl(MooseX::Types)
+Requires: perl(MooseX::Types::JSON)
+Requires: perl(MooseX::Types::LoadableClass)
+Requires: perl(MooseX::Types::Path::Class)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Class::Accessor::Grouped)
 BuildRequires : perl(Class::Inspector)
@@ -24,9 +29,14 @@ BuildRequires : perl(Data::Dumper::Concise)
 BuildRequires : perl(Data::Page)
 BuildRequires : perl(Devel::GlobalDestruction)
 BuildRequires : perl(Hash::Merge)
+BuildRequires : perl(JSON::Any)
 BuildRequires : perl(MRO::Compat)
 BuildRequires : perl(Module::Find)
 BuildRequires : perl(Moo)
+BuildRequires : perl(MooseX::Types)
+BuildRequires : perl(MooseX::Types::JSON)
+BuildRequires : perl(MooseX::Types::LoadableClass)
+BuildRequires : perl(MooseX::Types::Path::Class)
 BuildRequires : perl(Package::Stash)
 BuildRequires : perl(Path::Class)
 BuildRequires : perl(SQL::Abstract)
@@ -60,6 +70,7 @@ Group: Development
 Requires: perl-DBIx-Class-bin = %{version}-%{release}
 Provides: perl-DBIx-Class-devel = %{version}-%{release}
 Requires: perl-DBIx-Class = %{version}-%{release}
+Requires: perl-DBIx-Class = %{version}-%{release}
 
 %description dev
 dev components for the perl-DBIx-Class package.
@@ -88,7 +99,7 @@ man components for the perl-DBIx-Class package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
