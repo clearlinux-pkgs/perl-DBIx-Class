@@ -4,7 +4,7 @@
 #
 Name     : perl-DBIx-Class
 Version  : 0.082842
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/DBIx-Class-0.082842.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/DBIx-Class-0.082842.tar.gz
 Summary  : 'Extensible and flexible object <-> relational mapper.'
@@ -19,6 +19,7 @@ Requires: perl(MooseX::Types)
 Requires: perl(MooseX::Types::JSON)
 Requires: perl(MooseX::Types::LoadableClass)
 Requires: perl(MooseX::Types::Path::Class)
+Requires: perl(SQL::Abstract::Util)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Class::Accessor::Grouped)
 BuildRequires : perl(Class::Inspector)
