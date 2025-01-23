@@ -6,15 +6,14 @@
 # autospec commit: 94c6be0
 #
 Name     : perl-DBIx-Class
-Version  : 0.082843
-Release  : 37
-URL      : https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/DBIx-Class-0.082843.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/DBIx-Class-0.082843.tar.gz
+Version  : 0.082844
+Release  : 38
+URL      : https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/DBIx-Class-0.082844.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/DBIx-Class-0.082844.tar.gz
 Summary  : 'Extensible and flexible object <-> relational mapper.'
 Group    : Development/Tools
-License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+License  : Artistic-1.0-Perl
 Requires: perl-DBIx-Class-bin = %{version}-%{release}
-Requires: perl-DBIx-Class-license = %{version}-%{release}
 Requires: perl-DBIx-Class-man = %{version}-%{release}
 Requires: perl-DBIx-Class-perl = %{version}-%{release}
 Requires: perl(JSON::Any)
@@ -72,7 +71,6 @@ DBIx::Class - Extensible and flexible object <-> relational mapper.
 %package bin
 Summary: bin components for the perl-DBIx-Class package.
 Group: Binaries
-Requires: perl-DBIx-Class-license = %{version}-%{release}
 
 %description bin
 bin components for the perl-DBIx-Class package.
@@ -87,14 +85,6 @@ Requires: perl-DBIx-Class = %{version}-%{release}
 
 %description dev
 dev components for the perl-DBIx-Class package.
-
-
-%package license
-Summary: license components for the perl-DBIx-Class package.
-Group: Default
-
-%description license
-license components for the perl-DBIx-Class package.
 
 
 %package man
@@ -115,8 +105,8 @@ perl components for the perl-DBIx-Class package.
 
 
 %prep
-%setup -q -n DBIx-Class-0.082843
-cd %{_builddir}/DBIx-Class-0.082843
+%setup -q -n DBIx-Class-0.082844
+cd %{_builddir}/DBIx-Class-0.082844
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -140,8 +130,6 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/package-licenses/perl-DBIx-Class
-cp %{_builddir}/DBIx-Class-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/perl-DBIx-Class/07c54bf547a5e93faba0bfd7ed5f516dfa4ce156 || :
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -282,10 +270,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/DBIx::Class::UTF8Columns.3
 /usr/share/man/man3/SQL::Translator::Parser::DBIx::Class.3
 /usr/share/man/man3/SQL::Translator::Producer::DBIx::Class::File.3
-
-%files license
-%defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-DBIx-Class/07c54bf547a5e93faba0bfd7ed5f516dfa4ce156
 
 %files man
 %defattr(0644,root,root,0755)
