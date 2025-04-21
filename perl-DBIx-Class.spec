@@ -7,7 +7,7 @@
 #
 Name     : perl-DBIx-Class
 Version  : 0.082844
-Release  : 38
+Release  : 39
 URL      : https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/DBIx-Class-0.082844.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/DBIx-Class-0.082844.tar.gz
 Summary  : 'Extensible and flexible object <-> relational mapper.'
